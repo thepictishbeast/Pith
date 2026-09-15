@@ -102,8 +102,13 @@ class CanvasManager:
         self.show_annotations: ShowVar = ShowVar(self, tags.ANNOTATION, value=True)
         self.show_loss_links: ShowVar = ShowLinks(self, tags.LOSS_EDGES, value=True)
         self.show_iface_names: BooleanVar = BooleanVar(value=False)
-        self.show_ip4s: BooleanVar = BooleanVar(value=True)
-        self.show_ip6s: BooleanVar = BooleanVar(value=True)
+        # Throughline: off by default. CORE labels both ends of every link
+        # with the addresses it invented for the lab. When a node stands
+        # for a program that is really running, those addresses are
+        # fiction and they cover the one label that is true -- its name.
+        # The View menu still turns them back on.
+        self.show_ip4s: BooleanVar = BooleanVar(value=False)
+        self.show_ip6s: BooleanVar = BooleanVar(value=False)
 
         # throughput settings
         self.throughput_threshold: float = 250.0
@@ -225,8 +230,11 @@ class CanvasManager:
         self.show_grid.set(True)
         self.show_annotations.set(True)
         self.show_iface_names.set(False)
-        self.show_ip4s.set(True)
-        self.show_ip6s.set(True)
+        # Throughline: and here too. Joining a session runs this reset,
+        # so changing only the constructor default above applies cleanly
+        # and does nothing at all -- which is how it was first "fixed".
+        self.show_ip4s.set(False)
+        self.show_ip6s.set(False)
         self.show_loss_links.set(True)
         self.mode = GraphMode.SELECT
         self.annotation_type = None

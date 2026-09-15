@@ -1,3 +1,19 @@
+# Pith
+
+**A fork of CORE that draws the machine you actually have, not an
+imaginary lab.** Pith is the canvas for
+[Throughline](https://github.com/thepictishbeast/Throughline): its nodes
+stand for programs running on a real host right now, and the topology
+can be applied back to that host.
+
+What changed and why: **[THROUGHLINE.md](THROUGHLINE.md)**.
+
+Everything below is CORE's own documentation, kept as it was. Upstream is
+on the `upstream` remote; fixes that belong to everyone go back there as
+pull requests.
+
+---
+
 # CORE
 
 CORE: Common Open Research Emulator
