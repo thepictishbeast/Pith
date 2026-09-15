@@ -45,7 +45,7 @@ from collections import defaultdict
 from core.api.grpc import client, wrappers
 from core.api.grpc.wrappers import NodeType, Position
 
-ICONS = "/opt/core/daemon/core/gui/data/icons"
+ICONS = "/opt/pith/daemon/core/gui/data/icons"
 # CORE ships no icon for an anonymity network, so Tor borrows the tunnel.
 # `wlan.png` is the cloud CORE already draws for a wireless network, and a
 # cloud is what everyone means by the internet.
